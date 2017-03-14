@@ -1,0 +1,15 @@
+{
+    "name": "objectivedane/heatlosscalculator",
+    "description": "Tool for calculating radiator size in central heating systems",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Dane Stevens",
+            "email": "dev@objective-d.co.uk"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {"ObjectiveDane\\HeatLossCalculator\\": "src"}
+    }
+}
