@@ -29,7 +29,7 @@
  *
  */
 
-namespace Surface;
+namespace ObjectiveDane\HeatLossCalculator\Surface;
 
 /**
  * Represents a surface which has the ability to conduct heat away from a source.

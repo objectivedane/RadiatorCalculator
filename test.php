@@ -26,7 +26,9 @@
  *   SOFTWARE.
  *
  */
-require_once 'Surface/Surface.php';
+
+
+/* require_once 'Surface/Surface.php';
 require_once 'Room/Room.php';
 require_once 'Building/Building.php';
 
@@ -47,3 +49,11 @@ $other = new \Room\Room('Other Room', $wall2, $wall2, $wall2, $wall4, $floor, $c
 
 $myHouse = new \Building\Building(20, 'BTU', $spare, $other);
 var_dump($myHouse->getPowerByRoom(), $myHouse->getTotalPower());
+
+*/
+require_once __DIR__ . "/vendor/autoload.php";
+
+\ObjectiveDane\HeatLossCalculator\HeatLossCalculator::createBuilding('Dane\'s house');
+\ObjectiveDane\HeatLossCalculator\HeatLossCalculator::addRoom('Lounge');
+\ObjectiveDane\HeatLossCalculator\HeatLossCalculator::addSurfaceToRoom('Lounge', 3, 3, 1, 5, 'Outer Wall');
+var_dump(\ObjectiveDane\HeatLossCalculator\HeatLossCalculator::getHeatRequired(true));

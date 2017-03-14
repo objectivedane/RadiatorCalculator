@@ -30,7 +30,8 @@
  *
  */
 
-namespace Room;
+namespace ObjectiveDane\HeatLossCalculator\Room;
+use ObjectiveDane\HeatLossCalculator\Surface\Surface;
 
 /**
  * Class Room.  A room, in a building, consisting of heat-losing surfaces.
@@ -115,6 +116,15 @@ class Room
     {
         return $this->surface;
     }
+
+    /**
+     * @param array $surface
+     */
+    public function setSurface(Surface $surface)
+    {
+        $this->surface[$surface->getName()] = $surface;
+    }
+
 
     /**
      * @return mixed

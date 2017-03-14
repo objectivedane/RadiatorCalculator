@@ -29,9 +29,9 @@
  *
  */
 
-namespace Building;
+namespace ObjectiveDane\HeatLossCalculator\Building;
 
-use Room\Room;
+use ObjectiveDane\HeatLossCalculator\Room\Room;
 
 /**
  * Class Building. Represents a building, a collection of rooms.
@@ -43,6 +43,7 @@ class Building
     protected $room;
     protected $desiredTemperature;
     protected $mode;
+    protected $buildingName;
 
     /**
      * Building constructor.
@@ -51,15 +52,16 @@ class Building
      * @param ... Any number of objects from the Room\Room class (or subclasses)
      * @throws \Exception
      */
-    public function __construct( int $desiredTemperature, $mode = 'Watts' )
+    public function __construct( int $desiredTemperature, $mode = 'Watts', $buildingName = '221b Baker St' )
     {
         $this->desiredTemperature   =   $desiredTemperature;
         $this->mode                 =   $mode;
         $this->room                 =   [];
+        $this->buildingName         =   $buildingName;
 
         //Seek out any Room objects passed in as actual arguments
         $numberOfArguments = func_num_args();
-        for( $i = 3; $i <= $numberOfArguments; $i++ )
+        for( $i = 4; $i <= $numberOfArguments; $i++ )
         {
             $actualArgument = func_get_arg( $i-1 );
 
@@ -123,11 +125,12 @@ class Building
     }
 
     /**
-     * @return array
+     * @param string $roomName
+     * @return Room
      */
-    public function getRoom(): array
+    public function getRoom(string $roomName): Room
     {
-        return $this->room;
+        return $this->room[$roomName];
     }
 
     /**
@@ -135,7 +138,7 @@ class Building
      */
     public function setRoom(Room $room)
     {
-        $this->room[] = $room;
+        $this->room[$room->getName()] = $room;
     }
 
     /**
