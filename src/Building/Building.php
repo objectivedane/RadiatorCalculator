@@ -128,9 +128,9 @@ class Building
      * @param string $roomName
      * @return Room
      */
-    public function getRoom(string $roomName): Room
+    public function getRoom(string $roomName)
     {
-        return $this->room[$roomName];
+        return ( isset( $this->room[$roomName] )) ? $this->room[$roomName] : false;
     }
 
     /**

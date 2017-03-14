@@ -56,4 +56,16 @@ require_once __DIR__ . "/vendor/autoload.php";
 \ObjectiveDane\HeatLossCalculator\HeatLossCalculator::createBuilding('Dane\'s house');
 \ObjectiveDane\HeatLossCalculator\HeatLossCalculator::addRoom('Lounge');
 \ObjectiveDane\HeatLossCalculator\HeatLossCalculator::addSurfaceToRoom('Lounge', 3, 3, 1, 5, 'Outer Wall');
+\ObjectiveDane\HeatLossCalculator\HeatLossCalculator::addSurfaceToRoom('Lounge', 3, 3, 1, 5, 'Inner Wall');
+\ObjectiveDane\HeatLossCalculator\HeatLossCalculator::addSurfaceToRoom('Lounge', 3, 3, 1, 5, 'Ceiling');
+
+\ObjectiveDane\HeatLossCalculator\HeatLossCalculator::addRoom('Diner');
+\ObjectiveDane\HeatLossCalculator\HeatLossCalculator::addSurfaceToRoom('Diner', 3, 5, 1, 5, 'Outer Wall');
+$door = \ObjectiveDane\HeatLossCalculator\HeatLossCalculator::createChildSurface('Window', 1.5, 1.5, 2, 5);
+$window = \ObjectiveDane\HeatLossCalculator\HeatLossCalculator::createChildSurface('Door', 2, 1.5, 2, 5);
+\ObjectiveDane\HeatLossCalculator\HeatLossCalculator::addSurfaceToRoom('Diner', 3, 5, 1, 5, 'Inner Wall', $door, $window);
+\ObjectiveDane\HeatLossCalculator\HeatLossCalculator::addSurfaceToRoom('Diner', 3, 5, 1, 5, 'Another Wall');
+
+
 var_dump(\ObjectiveDane\HeatLossCalculator\HeatLossCalculator::getHeatRequired(true));
+

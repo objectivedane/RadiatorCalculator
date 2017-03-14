@@ -1,0 +1,11 @@
+create building with no name - ArgumentCountError
+setDesiredTemperature without building - Error
+setMode with invalid parameter - Exception
+addRoom duplicate name - Exception
+getRoom unknown room - TypeError
+addSurface without a measurement - TypeError
+addSurface with string as child - Exception
+addSurface with a -ve xMeasurement - Exception
+addSurface suplicate name - Exception
+createChild - duplicate name - exception
+

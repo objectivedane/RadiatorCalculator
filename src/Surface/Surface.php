@@ -68,11 +68,11 @@ class Surface
      */
     public function __construct( float $xMeasurement, float $yMeasurement, float $uValue, float $externalTemp, $name = null )
     {
-        $this->xMeasurement             = $xMeasurement;
-        $this->yMeasurement             = $yMeasurement;
-        $this->uValue                   = $uValue;
+        $this->setXMeasurement($xMeasurement);
+        $this->setYMeasurement($yMeasurement);
+        $this->setUValue($uValue);
         $this->externalTemperature      = $externalTemp;
-        $this->name                     = ( $name ) ? $name : null;
+        $this->name                     = $name;
         $this->childSurface             = [];
     }
 
@@ -148,9 +148,14 @@ class Surface
 
     /**
      * @param float $xMeasurement
+     * @throws \Exception on non positive float or zero
      */
     public function setXMeasurement( float $xMeasurement )
     {
+        if($xMeasurement <= 0)
+        {
+            throw new \Exception('Measurements must be a positive number');
+        }
         $this->xMeasurement = $xMeasurement;
     }
 
@@ -164,9 +169,15 @@ class Surface
 
     /**
      * @param float $yMeasurement
+     * @throws \Exception On non positive float
      */
     public function setYMeasurement( float $yMeasurement )
     {
+        if($yMeasurement <= 0)
+        {
+            throw new \Exception('Measurements must be a positive number');
+        }
+
         $this->yMeasurement = $yMeasurement;
     }
 
@@ -180,9 +191,14 @@ class Surface
 
     /**
      * @param float $uValue
+     * @throws \Exception on non positive float
      */
     public function setUValue( float $uValue )
     {
+        if($uValue <= 0)
+        {
+            throw new \Exception('A U-Value must be a positive number');
+        }
         $this->uValue = $uValue;
     }
 

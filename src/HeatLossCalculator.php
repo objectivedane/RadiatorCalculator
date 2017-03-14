@@ -41,9 +41,9 @@ class HeatLossCalculator
 
     /**
      * Set the output mode - BTU or Watts
-     * @param $mode
+     * @param $mode - must be BTU or Watts
      */
-    static public function setMode($mode)
+    static public function setMode(string $mode)
     {
         self::$building->setMode($mode);
     }
@@ -92,7 +92,7 @@ class HeatLossCalculator
         for($i=7; $i <= $numberOfArguments; $i++)
         {
             $actualArgument = func_get_arg($numberOfArguments-1);
-            if( is_a( $actualArgument, 'Surface' ) )
+            if( is_a( $actualArgument, Surface::class) )
             {
                 $surface->setChildSurface($actualArgument);
             }

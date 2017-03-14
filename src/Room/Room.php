@@ -110,18 +110,25 @@ class Room
     }
 
     /**
-     * @return array of Surfaces
+     * @param $surfaceName
+     * @return bool|mixed
      */
-    public function getSurface() : array
+    public function getSurface($surfaceName)
     {
-        return $this->surface;
+        return ( isset ( $this->surface[$surfaceName] )) ? $this->surface[$surfaceName] : false;
     }
 
     /**
-     * @param array $surface
+     * @param Surface $surface
+     * @throws \Exception On duplicate surface name
      */
     public function setSurface(Surface $surface)
     {
+        if( $this->getSurface( $surface->getName() ) )
+        {
+            throw new \Exception('Surface name already exists');
+        }
+
         $this->surface[$surface->getName()] = $surface;
     }
 
