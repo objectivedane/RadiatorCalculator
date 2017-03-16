@@ -11,6 +11,9 @@
  * Class HeatLossCalculatorTest
  * @covers HeatLossCalculator
  */
+
+use ObjectiveDane\HeatLossCalculator\HeatLossCalculator as HeatLossCalculator;
+
 final class HeatLossCalculatorTest extends \PHPUnit\Framework\TestCase
 {
 
@@ -18,16 +21,16 @@ final class HeatLossCalculatorTest extends \PHPUnit\Framework\TestCase
 
     public function setUp()
     {
-        \ObjectiveDane\HeatLossCalculator\HeatLossCalculator::createBuilding();
-        ObjectiveDane\HeatLossCalculator\HeatLossCalculator::addRoom('name here');
+        HeatLossCalculator::createBuilding();
+        HeatLossCalculator::addRoom('name here');
 
-        \ObjectiveDane\HeatLossCalculator\HeatLossCalculator::addSurfaceToRoom('name here',3, 3, 1.8, 5, 'Outer Wall (North)');
-        \ObjectiveDane\HeatLossCalculator\HeatLossCalculator::addSurfaceToRoom('name here',3, 3, 1.8, 7, 'Outer Wall (West)');
-        \ObjectiveDane\HeatLossCalculator\HeatLossCalculator::addSurfaceToRoom('name here',3, 3, 1.8, 7, 'Outer Wall (East)');
-        \ObjectiveDane\HeatLossCalculator\HeatLossCalculator::addSurfaceToRoom('name here',3, 3, 1.8, 18, 'Ceiling');
-        \ObjectiveDane\HeatLossCalculator\HeatLossCalculator::addSurfaceToRoom('name here',3, 3, 1.8, 10, 'Floor');
+        HeatLossCalculator::addSurfaceToRoom('name here',3, 3, 1.8, 5, 'Outer Wall (North)');
+        HeatLossCalculator::addSurfaceToRoom('name here',3, 3, 1.8, 7, 'Outer Wall (West)');
+        HeatLossCalculator::addSurfaceToRoom('name here',3, 3, 1.8, 7, 'Outer Wall (East)');
+        HeatLossCalculator::addSurfaceToRoom('name here',3, 3, 1.8, 18, 'Ceiling');
+        HeatLossCalculator::addSurfaceToRoom('name here',3, 3, 1.8, 10, 'Floor');
 
-        $this->aChildSurface = \ObjectiveDane\HeatLossCalculator\HeatLossCalculator::createChildSurface('Window', 1.2, 1.2, 2, 5);
+        $this->aChildSurface = HeatLossCalculator::createChildSurface('Window', 1.2, 1.2, 2, 5);
 
     }
 
@@ -37,7 +40,7 @@ final class HeatLossCalculatorTest extends \PHPUnit\Framework\TestCase
      */
    public function testInvalidMode()
    {
-       \ObjectiveDane\HeatLossCalculator\HeatLossCalculator::setMode('FOO');
+       HeatLossCalculator::setMode('FOO');
    }
 
     /**
@@ -53,8 +56,8 @@ final class HeatLossCalculatorTest extends \PHPUnit\Framework\TestCase
     */
    public function testGetRoom()
    {
-       $this->assertInstanceOf(\ObjectiveDane\HeatLossCalculator\Room\Room::class, \ObjectiveDane\HeatLossCalculator\HeatLossCalculator::getRoom('name here'));
-       $this->assertFalse(\ObjectiveDane\HeatLossCalculator\HeatLossCalculator::getRoom('FooBar'));
+       $this->assertInstanceOf(\ObjectiveDane\HeatLossCalculator\Room\Room::class, HeatLossCalculator::getRoom('name here'));
+       $this->assertFalse(HeatLossCalculator::getRoom('FooBar'));
    }
 
     /**
@@ -63,7 +66,7 @@ final class HeatLossCalculatorTest extends \PHPUnit\Framework\TestCase
    public function testAddSurfaceDuplicate()
    {
        //Duplicate should throw exception
-       \ObjectiveDane\HeatLossCalculator\HeatLossCalculator::addSurfaceToRoom('name here',3, 3, 1.8, 5, 'Outer Wall (North)');
+       HeatLossCalculator::addSurfaceToRoom('name here',3, 3, 1.8, 5, 'Outer Wall (North)');
    }
 
     /**
@@ -71,7 +74,7 @@ final class HeatLossCalculatorTest extends \PHPUnit\Framework\TestCase
      */
    public function testAddNegativeSurface()
    {
-       \ObjectiveDane\HeatLossCalculator\HeatLossCalculator::addSurfaceToRoom('name here', -2, 34, 1.8, 5, 'test wall');
+       HeatLossCalculator::addSurfaceToRoom('name here', -2, 34, 1.8, 5, 'test wall');
    }
 
    /**
@@ -93,15 +96,15 @@ final class HeatLossCalculatorTest extends \PHPUnit\Framework\TestCase
         *
         */
 
-       \ObjectiveDane\HeatLossCalculator\HeatLossCalculator::addRoom('test room');
-       \ObjectiveDane\HeatLossCalculator\HeatLossCalculator::addSurfaceToRoom('test room', 2, 2, 1.8, 5, 'wall1');
-       \ObjectiveDane\HeatLossCalculator\HeatLossCalculator::addSurfaceToRoom('test room', 2, 2, 1.8, 5, 'wall2');
-       \ObjectiveDane\HeatLossCalculator\HeatLossCalculator::addSurfaceToRoom('test room', 2, 2, 1.8, 5, 'wall3');
+       HeatLossCalculator::addRoom('test room');
+       HeatLossCalculator::addSurfaceToRoom('test room', 2, 2, 1.8, 5, 'wall1');
+       HeatLossCalculator::addSurfaceToRoom('test room', 2, 2, 1.8, 5, 'wall2');
+       HeatLossCalculator::addSurfaceToRoom('test room', 2, 2, 1.8, 5, 'wall3');
 
-       $window = \ObjectiveDane\HeatLossCalculator\HeatLossCalculator::createChildSurface('window', 1, 1, 2.5, 5);
-       \ObjectiveDane\HeatLossCalculator\HeatLossCalculator::addSurfaceToRoom('test room', 2, 2, 1.8, 5, 'wall4', $window);
+       $window = HeatLossCalculator::createChildSurface('window', 1, 1, 2.5, 5);
+       HeatLossCalculator::addSurfaceToRoom('test room', 2, 2, 1.8, 5, 'wall4', $window);
 
-       $this->assertEquals(\ObjectiveDane\HeatLossCalculator\HeatLossCalculator::getHeatRequired(false, 'test room'), 472);
+       $this->assertEquals(HeatLossCalculator::getHeatRequired(false, 'test room'), 472);
    }
 
 
