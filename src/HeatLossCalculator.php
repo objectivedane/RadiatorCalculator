@@ -143,7 +143,7 @@ class HeatLossCalculator
     {
         if( $roomName )
         {
-            return self::$building->getRoom($roomName)->getPowerToHeat();
+            return self::$building->getPowerByRoom()[$roomName];
         }
         else if ( $breakdown )
         {
