@@ -31,8 +31,9 @@ class HeatLossCalculator
      * Create the building and provide a name.  Rooms can be added to this building.
      * @param $buildingName
      */
-    static public function createBuilding($buildingName)
+    static public function createBuilding($buildingName = 'Your House')
     {
+
         self::$building =  new Building(21, 'Watts', $buildingName);
     }
 
@@ -48,9 +49,15 @@ class HeatLossCalculator
     /**
      * Set the output mode - BTU or Watts. Defaults to Watts.
      * @param $mode - must be BTU or Watts
+     * @throws \Exception
      */
     static public function setMode(string $mode = 'Watts')
     {
+        if($mode !== 'Watts' || $mode !== 'BTU')
+        {
+            throw new \Exception('Invalid Output Mode');
+        }
+
         self::$building->setMode($mode);
     }
 
