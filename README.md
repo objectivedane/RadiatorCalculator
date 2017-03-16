@@ -12,5 +12,5 @@ API Index
         * ObjectiveDane\HeatLossCalculator\Room
             * Room
         * ObjectiveDane\HeatLossCalculator\Building
-            * [Building
+            * Building
 
