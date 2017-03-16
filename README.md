@@ -7,10 +7,10 @@ API Index
 * ObjectiveDane
     * ObjectiveDane\HeatLossCalculator
         * ObjectiveDane\HeatLossCalculator\Surface
-            * [Surface](ObjectiveDane-HeatLossCalculator-Surface-Surface.md)
-        * [HeatLossCalculator](ObjectiveDane-HeatLossCalculator-HeatLossCalculator.md)
+            * Surface
+        * HeatLossCalculator
         * ObjectiveDane\HeatLossCalculator\Room
-            * [Room](ObjectiveDane-HeatLossCalculator-Room-Room.md)
+            * Room
         * ObjectiveDane\HeatLossCalculator\Building
-            * [Building](ObjectiveDane-HeatLossCalculator-Building-Building.md)
+            * [Building
 
