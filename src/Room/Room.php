@@ -1,6 +1,7 @@
 <?php
 
 /**
+ * Room.php
  * Created by PhpStorm.
  * User: frank
  * Date: 12/03/17
@@ -39,21 +40,29 @@ use ObjectiveDane\HeatLossCalculator\Surface\Surface;
  */
 class Room
 {
-    //Array of surfaces making this room
+    /**
+     * An array of Surface objects
+     */
     protected $surface;
 
-    //Desired room temperature
+    /**
+     * The desired temperature of this room
+     */
     protected $desiredTemperature;
 
-    //Mode of output, BTU or Watts
+    /**
+     * The output mode (Watts or BTU) for this room.
+     */
     protected $mode;
 
-    //Name of room
+    /**
+     * The name of this Room/
+     */
     protected $name;
 
     /**
      * Room constructor.
-     * @param $name Reference name of room
+     * @param $name String reference name of room
      * @param ... A number of Surfaces
      * @throws \Exception on invalid argument
      */
@@ -94,6 +103,7 @@ class Room
     }
 
     /**
+     * Getter for desiredTemperature.
      * @return mixed
      */
     public function getDesiredTemperature()
@@ -102,6 +112,7 @@ class Room
     }
 
     /**
+     * Setter for desiredTemperature.
      * @param mixed $desiredTemperature
      */
     public function setDesiredTemperature( $desiredTemperature )
@@ -110,6 +121,7 @@ class Room
     }
 
     /**
+     * Get a Surface from the array.
      * @param $surfaceName
      * @return bool|mixed
      */
@@ -119,6 +131,7 @@ class Room
     }
 
     /**
+     * Add a Surface to the array.
      * @param Surface $surface
      * @throws \Exception On duplicate surface name
      */
@@ -134,6 +147,7 @@ class Room
 
 
     /**
+     * Get the output mode.
      * @return mixed
      */
     public function getMode() : string
@@ -142,6 +156,7 @@ class Room
     }
 
     /**
+     * Set the output mode.
      * @param mixed $mode
      */
     public function setMode( $mode )
@@ -150,6 +165,7 @@ class Room
     }
 
     /**
+     * Get the Room name.
      * @return mixed
      */
     public function getName() : string
@@ -158,6 +174,7 @@ class Room
     }
 
     /**
+     * Set the Room name.
      * @param mixed $name
      */
     public function setName( $name )

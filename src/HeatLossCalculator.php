@@ -14,15 +14,21 @@ use ObjectiveDane\HeatLossCalculator\Room\Room;
 use ObjectiveDane\HeatLossCalculator\Surface\Surface;
 
 /**
- * Class HeatLossCalculator
+ * Class HeatLossCalculator.
+ * This is class uses static methods and acts as an orchestrator for the other classes in the package.
+ * The intention is that the user will only interact with this class.  Start with createBuilding, then addRoom then addSurface to the Rooms.
+ * The radiator size can then be fetched room by room, or as an array of all rooms, or even a building total giving the boiler size requirement (getHeatRequired).
  * @package ObjectiveDane\HeatLossCalculator
  */
 class HeatLossCalculator
 {
+    /**
+     * The building instance for this calculation.
+     */
     private static $building;
 
     /**
-     * Create the building and provide a name.
+     * Create the building and provide a name.  Rooms can be added to this building.
      * @param $buildingName
      */
     static public function createBuilding($buildingName)
@@ -31,7 +37,7 @@ class HeatLossCalculator
     }
 
     /**
-     * Set the desired temperature for the building
+     * Set the desired temperature for the building, used by the power requirement formula.
      * @param int $temperature
      */
     static public function setDesiredTemperature(int $temperature)
@@ -40,16 +46,16 @@ class HeatLossCalculator
     }
 
     /**
-     * Set the output mode - BTU or Watts
+     * Set the output mode - BTU or Watts. Defaults to Watts.
      * @param $mode - must be BTU or Watts
      */
-    static public function setMode(string $mode)
+    static public function setMode(string $mode = 'Watts')
     {
         self::$building->setMode($mode);
     }
 
     /**
-     * Add a room to the building
+     * Add a room to the building.  Surfaces are added after.
      * @param string $roomName - give it a name
      * @throws \Exception - if the name is in use
      */
@@ -63,9 +69,9 @@ class HeatLossCalculator
     }
 
     /**
-     * Fetch a previously created room
+     * Fetch a previously created room.
      * @param string $roomName
-     * @return mixed
+     * @return Room the Room object with the $roomName.
      */
     static public function getRoom(string $roomName)
     {
@@ -73,7 +79,7 @@ class HeatLossCalculator
     }
 
     /**
-     * Add a surface (wall, ceiling) to the room
+     * Add a surface (wall, ceiling) to the room.  Windows and doors can be added as child surfaces by passing them as formal arguments on the end of the argument list.
      * @param string $roomName
      * @param float $xMeasurement
      * @param float $yMeasurement
@@ -132,7 +138,7 @@ class HeatLossCalculator
         {
             return self::$building->getRoom($roomName)->getPowerToHeat();
         }
-        else if ($breakdown)
+        else if ( $breakdown )
         {
             return self::$building->getPowerByRoom();
         }

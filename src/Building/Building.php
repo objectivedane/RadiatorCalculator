@@ -40,9 +40,24 @@ use ObjectiveDane\HeatLossCalculator\Room\Room;
 class Building
 {
 
+    /**
+     * An array of Room objects.
+     */
     protected $room;
+
+    /**
+     * The desired temperature for this calculation.
+     */
     protected $desiredTemperature;
+
+    /**
+     * Mode of output, either BTU or Watts.
+     */
     protected $mode;
+
+    /**
+     * A name for this building.
+     */
     protected $buildingName;
 
     /**
@@ -78,6 +93,7 @@ class Building
     }
 
     /**
+     * Return an array where elements are (string) roomName => (int) powerRequiredToHeatRoom
      * @return array Of [room name] = Power required
      * @throws \Exception If there are no rooms
      */
@@ -125,6 +141,7 @@ class Building
     }
 
     /**
+     * Getter for a Room object in the array.
      * @param string $roomName
      * @return Room
      */
@@ -134,6 +151,7 @@ class Building
     }
 
     /**
+     * Add a Room object to the array.
      * @param Room $room
      */
     public function setRoom(Room $room)
@@ -142,6 +160,7 @@ class Building
     }
 
     /**
+     * Get the desired temperature.
      * @return int
      */
     public function getDesiredTemperature(): int
@@ -150,6 +169,7 @@ class Building
     }
 
     /**
+     * Set the desired temperature.
      * @param int $desiredTemperature
      */
     public function setDesiredTemperature(int $desiredTemperature)
@@ -158,6 +178,7 @@ class Building
     }
 
     /**
+     * Get the output mode.
      * @return string
      */
     public function getMode(): string
@@ -166,6 +187,7 @@ class Building
     }
 
     /**
+     * Set the output mode.
      * @param string $mode
      */
     public function setMode(string $mode)

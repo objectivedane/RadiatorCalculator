@@ -1,5 +1,7 @@
 <?php
 /**
+ * Summary.
+ *
  * Created by PhpStorm.
  * User: frank
  * Date: 12/03/17
@@ -38,23 +40,39 @@ namespace ObjectiveDane\HeatLossCalculator\Surface;
  */
 class Surface
 {
-    // Measurements for area calculation
+    /**
+     * A measurement for calculation of surface area.
+     */
     protected $xMeasurement;
+
+    /**
+     * A meaasurement for calculation of surface area.
+     */
     protected $yMeasurement;
 
-    //The u Value of the material of construction
+    /**
+     * The u Value of the surface material.
+     */
     protected $uValue;
 
-    //A name for reference
+    /**
+     * Name of surface.
+     */
     protected $name;
 
-    //An array of child surfaces
+    /**
+     * Array of child surfaces.
+     */
     protected $childSurface;
 
-    //The temperature on the cold side of this surface
+    /**
+     * The temperature on the other side of the surface.
+     */
     protected $externalTemperature;
 
-    //The BTU conversion multiplier
+    /**
+     * Value for conversion of watts to BTU.
+     */
     const BTU_MULTIPLIER = 3.412142;
 
     /**
@@ -64,7 +82,7 @@ class Surface
      * @param float $yMeasurement length or height
      * @param float $uValue The U-Value of this surface
      * @param float $externalTemp The cold temperature
-     * @param null $name
+     * @param null $name A name for this surface
      */
     public function __construct( float $xMeasurement, float $yMeasurement, float $uValue, float $externalTemp, $name = null )
     {
@@ -139,6 +157,7 @@ class Surface
     }
 
     /**
+     * Getter for $xMeasurement.
      * @return float
      */
     public function getXMeasurement(): float
@@ -147,6 +166,7 @@ class Surface
     }
 
     /**
+     * Setter for $xMeasurement.
      * @param float $xMeasurement
      * @throws \Exception on non positive float or zero
      */
@@ -160,6 +180,7 @@ class Surface
     }
 
     /**
+     * Getter for $yMeasurement.
      * @return float
      */
     public function getYMeasurement(): float
@@ -168,6 +189,7 @@ class Surface
     }
 
     /**
+     * Setter for $yMeasurement.
      * @param float $yMeasurement
      * @throws \Exception On non positive float
      */
@@ -182,6 +204,7 @@ class Surface
     }
 
     /**
+     * Getter for $uValue.
      * @return float
      */
     public function getUValue(): float
@@ -190,6 +213,7 @@ class Surface
     }
 
     /**
+     * Setter for $uValue.
      * @param float $uValue
      * @throws \Exception on non positive float
      */
@@ -203,6 +227,7 @@ class Surface
     }
 
     /**
+     * Getter for name.
      * @return string
      */
     public function getName() : string
@@ -211,6 +236,7 @@ class Surface
     }
 
     /**
+     * Setter for name.
      * @param null $name
      */
     public function setName( $name )
@@ -218,12 +244,17 @@ class Surface
         $this->name = $name;
     }
 
+    /**
+     * Setter for child surfaces.
+     * @param Surface Child surface
+     */
     public function setChildSurface( Surface $surfaceToAttach )
     {
         $this->childSurface[] = $surfaceToAttach;
     }
 
     /**
+     * Getter for child surfaces.
      * @return array
      */
     public function getChildSurface() : array
@@ -232,6 +263,7 @@ class Surface
     }
 
     /**
+     * Getter for external temperature.
      * @return float
      */
     public function getExternalTemperature(): float
@@ -240,6 +272,7 @@ class Surface
     }
 
     /**
+     * Setter for external temperature.
      * @param float $externalTemperature
      */
     public function setExternalTemperature( float $externalTemperature )
