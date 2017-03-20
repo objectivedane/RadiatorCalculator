@@ -1,6 +1,28 @@
 ObjectiveDane\RadiatorCalculator\RadiatorCalculator
 ===============
 
+Use to calculate the size of radiator required for a central heating system.
+Formula: surface area (m2) * temperature difference (c) * uValue
+The formula calculates the power required to maintain a temperature, considering the temperature on the other side of the surface and its uValue.
+Surfaces must be added to a room, or rooms, which in turn must be added to a building.
+
+Example:
+
+    RadiatorCalculator::createBuilding();
+    RadiatorCalculator::addRoom('Living Room');
+
+    RadiatorCalculator::addSurfaceToRoom('Living Room',3, 3, 1.8, 5, 'Outer Wall (North)');
+    RadiatorCalculator::addSurfaceToRoom('Living Room',3, 3, 1.8, 7, 'Outer Wall (West)');
+    RadiatorCalculator::addSurfaceToRoom('Living Room',3, 3, 1.8, 7, 'Outer Wall (East)');
+    RadiatorCalculator::addSurfaceToRoom('Living Room',3, 3, 1.8, 18, 'Ceiling');
+    RadiatorCalculator::addSurfaceToRoom('Living Room',3, 3, 1.8, 10, 'Floor');
+    RadiatorCalculator::getHeatRequired(false, 'test room');
+    
+Documentation below:
+
+===============
+
+
 Class RadiatorCalculator.
 
 This is class uses static methods and acts as an orchestrator for the other classes in the package.
