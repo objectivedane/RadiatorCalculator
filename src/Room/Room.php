@@ -31,8 +31,8 @@
  *
  */
 
-namespace ObjectiveDane\HeatLossCalculator\Room;
-use ObjectiveDane\HeatLossCalculator\Surface\Surface;
+namespace ObjectiveDane\RadiatorCalculator\Room;
+use ObjectiveDane\RadiatorCalculator\Surface\Surface;
 
 /**
  * Class Room.  A room, in a building, consisting of heat-losing surfaces.

@@ -31,7 +31,7 @@
  *
  */
 
-namespace ObjectiveDane\HeatLossCalculator\Surface;
+namespace ObjectiveDane\RadiatorCalculator\Surface;
 
 /**
  * Represents a surface which has the ability to conduct heat away from a source.

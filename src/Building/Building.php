@@ -29,9 +29,9 @@
  *
  */
 
-namespace ObjectiveDane\HeatLossCalculator\Building;
+namespace ObjectiveDane\RadiatorCalculator\Building;
 
-use ObjectiveDane\HeatLossCalculator\Room\Room;
+use ObjectiveDane\RadiatorCalculator\Room\Room;
 
 /**
  * Class Building. Represents a building, a collection of rooms.

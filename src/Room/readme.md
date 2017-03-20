@@ -1,4 +1,4 @@
-ObjectiveDane\HeatLossCalculator\Room\Room
+ObjectiveDane\RadiatorCalculator\Room\Room
 ===============
 
 Class Room.  A room, in a building, consisting of heat-losing surfaces.
@@ -7,7 +7,7 @@ Class Room.  A room, in a building, consisting of heat-losing surfaces.
 
 
 * Class name: Room
-* Namespace: ObjectiveDane\HeatLossCalculator\Room
+* Namespace: ObjectiveDane\RadiatorCalculator\Room
 
 
 
@@ -67,7 +67,7 @@ Methods
 
 ### __construct
 
-    mixed ObjectiveDane\HeatLossCalculator\Room\Room::__construct($name)
+    mixed ObjectiveDane\RadiatorCalculator\Room\Room::__construct($name)
 
 Room constructor.
 
@@ -83,7 +83,7 @@ Room constructor.
 
 ### getPowerToHeat
 
-    integer ObjectiveDane\HeatLossCalculator\Room\Room::getPowerToHeat()
+    integer ObjectiveDane\RadiatorCalculator\Room\Room::getPowerToHeat()
 
 Iterate over the surfaces and ask what the power to maintain a temperature is.
 
@@ -96,7 +96,7 @@ Iterate over the surfaces and ask what the power to maintain a temperature is.
 
 ### getDesiredTemperature
 
-    mixed ObjectiveDane\HeatLossCalculator\Room\Room::getDesiredTemperature()
+    mixed ObjectiveDane\RadiatorCalculator\Room\Room::getDesiredTemperature()
 
 Getter for desiredTemperature.
 
@@ -109,7 +109,7 @@ Getter for desiredTemperature.
 
 ### setDesiredTemperature
 
-    mixed ObjectiveDane\HeatLossCalculator\Room\Room::setDesiredTemperature(mixed $desiredTemperature)
+    mixed ObjectiveDane\RadiatorCalculator\Room\Room::setDesiredTemperature(mixed $desiredTemperature)
 
 Setter for desiredTemperature.
 
@@ -125,7 +125,7 @@ Setter for desiredTemperature.
 
 ### getSurface
 
-    boolean|mixed ObjectiveDane\HeatLossCalculator\Room\Room::getSurface($surfaceName)
+    boolean|mixed ObjectiveDane\RadiatorCalculator\Room\Room::getSurface($surfaceName)
 
 Get a Surface from the array.
 
@@ -141,7 +141,7 @@ Get a Surface from the array.
 
 ### setSurface
 
-    mixed ObjectiveDane\HeatLossCalculator\Room\Room::setSurface(\ObjectiveDane\HeatLossCalculator\Surface\Surface $surface)
+    mixed ObjectiveDane\RadiatorCalculator\Room\Room::setSurface(\ObjectiveDane\RadiatorCalculator\Surface\Surface $surface)
 
 Add a Surface to the array.
 
@@ -151,13 +151,13 @@ Add a Surface to the array.
 
 
 #### Arguments
-* $surface **[ObjectiveDane\HeatLossCalculator\Surface\Surface](ObjectiveDane-HeatLossCalculator-Surface-Surface.md)**
+* $surface **[ObjectiveDane\RadiatorCalculator\Surface\Surface](ObjectiveDane-RadiatorCalculator-Surface-Surface.md)**
 
 
 
 ### getMode
 
-    mixed ObjectiveDane\HeatLossCalculator\Room\Room::getMode()
+    mixed ObjectiveDane\RadiatorCalculator\Room\Room::getMode()
 
 Get the output mode.
 
@@ -170,7 +170,7 @@ Get the output mode.
 
 ### setMode
 
-    mixed ObjectiveDane\HeatLossCalculator\Room\Room::setMode(mixed $mode)
+    mixed ObjectiveDane\RadiatorCalculator\Room\Room::setMode(mixed $mode)
 
 Set the output mode.
 
@@ -186,7 +186,7 @@ Set the output mode.
 
 ### getName
 
-    mixed ObjectiveDane\HeatLossCalculator\Room\Room::getName()
+    mixed ObjectiveDane\RadiatorCalculator\Room\Room::getName()
 
 Get the Room name.
 
@@ -199,7 +199,7 @@ Get the Room name.
 
 ### setName
 
-    mixed ObjectiveDane\HeatLossCalculator\Room\Room::setName(mixed $name)
+    mixed ObjectiveDane\RadiatorCalculator\Room\Room::setName(mixed $name)
 
 Set the Room name.
 

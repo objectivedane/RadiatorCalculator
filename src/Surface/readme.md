@@ -1,4 +1,4 @@
-ObjectiveDane\HeatLossCalculator\Surface\Surface
+ObjectiveDane\RadiatorCalculator\Surface\Surface
 ===============
 
 Represents a surface which has the ability to conduct heat away from a source.
@@ -7,7 +7,7 @@ Class Surface
 
 
 * Class name: Surface
-* Namespace: ObjectiveDane\HeatLossCalculator\Surface
+* Namespace: ObjectiveDane\RadiatorCalculator\Surface
 
 
 
@@ -99,7 +99,7 @@ Methods
 
 ### __construct
 
-    mixed ObjectiveDane\HeatLossCalculator\Surface\Surface::__construct(float $xMeasurement, float $yMeasurement, float $uValue, float $externalTemp, null $name)
+    mixed ObjectiveDane\RadiatorCalculator\Surface\Surface::__construct(float $xMeasurement, float $yMeasurement, float $uValue, float $externalTemp, null $name)
 
 Surface constructor.
 
@@ -119,7 +119,7 @@ Name is optional, it is initialised and set to null if not provided.
 
 ### getHeatLoss
 
-    float ObjectiveDane\HeatLossCalculator\Surface\Surface::getHeatLoss(integer $desiredTemperature, string $mode)
+    float ObjectiveDane\RadiatorCalculator\Surface\Surface::getHeatLoss(integer $desiredTemperature, string $mode)
 
 Provides the power in Watts needed to maintain the desired temperature on one side of this surface.
 
@@ -137,7 +137,7 @@ Performs temperature difference * u Value * suurface area.
 
 ### getSurfaceArea
 
-    float ObjectiveDane\HeatLossCalculator\Surface\Surface::getSurfaceArea()
+    float ObjectiveDane\RadiatorCalculator\Surface\Surface::getSurfaceArea()
 
 Returns the area of this surface
 
@@ -150,7 +150,7 @@ Returns the area of this surface
 
 ### getXMeasurement
 
-    float ObjectiveDane\HeatLossCalculator\Surface\Surface::getXMeasurement()
+    float ObjectiveDane\RadiatorCalculator\Surface\Surface::getXMeasurement()
 
 Getter for $xMeasurement.
 
@@ -163,7 +163,7 @@ Getter for $xMeasurement.
 
 ### setXMeasurement
 
-    mixed ObjectiveDane\HeatLossCalculator\Surface\Surface::setXMeasurement(float $xMeasurement)
+    mixed ObjectiveDane\RadiatorCalculator\Surface\Surface::setXMeasurement(float $xMeasurement)
 
 Setter for $xMeasurement.
 
@@ -179,7 +179,7 @@ Setter for $xMeasurement.
 
 ### getYMeasurement
 
-    float ObjectiveDane\HeatLossCalculator\Surface\Surface::getYMeasurement()
+    float ObjectiveDane\RadiatorCalculator\Surface\Surface::getYMeasurement()
 
 Getter for $yMeasurement.
 
@@ -192,7 +192,7 @@ Getter for $yMeasurement.
 
 ### setYMeasurement
 
-    mixed ObjectiveDane\HeatLossCalculator\Surface\Surface::setYMeasurement(float $yMeasurement)
+    mixed ObjectiveDane\RadiatorCalculator\Surface\Surface::setYMeasurement(float $yMeasurement)
 
 Setter for $yMeasurement.
 
@@ -208,7 +208,7 @@ Setter for $yMeasurement.
 
 ### getUValue
 
-    float ObjectiveDane\HeatLossCalculator\Surface\Surface::getUValue()
+    float ObjectiveDane\RadiatorCalculator\Surface\Surface::getUValue()
 
 Getter for $uValue.
 
@@ -221,7 +221,7 @@ Getter for $uValue.
 
 ### setUValue
 
-    mixed ObjectiveDane\HeatLossCalculator\Surface\Surface::setUValue(float $uValue)
+    mixed ObjectiveDane\RadiatorCalculator\Surface\Surface::setUValue(float $uValue)
 
 Setter for $uValue.
 
@@ -237,7 +237,7 @@ Setter for $uValue.
 
 ### getName
 
-    string ObjectiveDane\HeatLossCalculator\Surface\Surface::getName()
+    string ObjectiveDane\RadiatorCalculator\Surface\Surface::getName()
 
 Getter for name.
 
@@ -250,7 +250,7 @@ Getter for name.
 
 ### setName
 
-    mixed ObjectiveDane\HeatLossCalculator\Surface\Surface::setName(null $name)
+    mixed ObjectiveDane\RadiatorCalculator\Surface\Surface::setName(null $name)
 
 Setter for name.
 
@@ -266,7 +266,7 @@ Setter for name.
 
 ### setChildSurface
 
-    mixed ObjectiveDane\HeatLossCalculator\Surface\Surface::setChildSurface(\ObjectiveDane\HeatLossCalculator\Surface\Surface $surfaceToAttach)
+    mixed ObjectiveDane\RadiatorCalculator\Surface\Surface::setChildSurface(\ObjectiveDane\RadiatorCalculator\Surface\Surface $surfaceToAttach)
 
 Setter for child surfaces.
 
@@ -276,13 +276,13 @@ Setter for child surfaces.
 
 
 #### Arguments
-* $surfaceToAttach **[ObjectiveDane\HeatLossCalculator\Surface\Surface](ObjectiveDane-HeatLossCalculator-Surface-Surface.md)** - &lt;p&gt;Child surface&lt;/p&gt;
+* $surfaceToAttach **[ObjectiveDane\RadiatorCalculator\Surface\Surface](ObjectiveDane-RadiatorCalculator-Surface-Surface.md)** - &lt;p&gt;Child surface&lt;/p&gt;
 
 
 
 ### getChildSurface
 
-    array ObjectiveDane\HeatLossCalculator\Surface\Surface::getChildSurface()
+    array ObjectiveDane\RadiatorCalculator\Surface\Surface::getChildSurface()
 
 Getter for child surfaces.
 
@@ -295,7 +295,7 @@ Getter for child surfaces.
 
 ### getExternalTemperature
 
-    float ObjectiveDane\HeatLossCalculator\Surface\Surface::getExternalTemperature()
+    float ObjectiveDane\RadiatorCalculator\Surface\Surface::getExternalTemperature()
 
 Getter for external temperature.
 
@@ -308,7 +308,7 @@ Getter for external temperature.
 
 ### setExternalTemperature
 
-    mixed ObjectiveDane\HeatLossCalculator\Surface\Surface::setExternalTemperature(float $externalTemperature)
+    mixed ObjectiveDane\RadiatorCalculator\Surface\Surface::setExternalTemperature(float $externalTemperature)
 
 Setter for external temperature.
 

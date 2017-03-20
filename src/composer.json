@@ -1,5 +1,5 @@
 {
-    "name": "objectivedane/heatlosscalculator",
+    "name": "objectivedane/RadiatorCalculator",
     "description": "Tool for calculating radiator size in central heating systems",
     "license": "MIT",
     "authors": [
@@ -12,6 +12,6 @@
         "phpunit/phpunit": "^6.0"
     },
     "autoload": {
-        "psr-4": {"ObjectiveDane\\HeatLossCalculator\\": ""}
+        "psr-4": {"ObjectiveDane\\RadiatorCalculator\\": ""}
     }
 }

@@ -1,4 +1,4 @@
-ObjectiveDane\HeatLossCalculator\Building\Building
+ObjectiveDane\RadiatorCalculator\Building\Building
 ===============
 
 Class Building. Represents a building, a collection of rooms.
@@ -7,7 +7,7 @@ Class Building. Represents a building, a collection of rooms.
 
 
 * Class name: Building
-* Namespace: ObjectiveDane\HeatLossCalculator\Building
+* Namespace: ObjectiveDane\RadiatorCalculator\Building
 
 
 
@@ -67,7 +67,7 @@ Methods
 
 ### __construct
 
-    mixed ObjectiveDane\HeatLossCalculator\Building\Building::__construct(integer $desiredTemperature, string $mode, \ObjectiveDane\HeatLossCalculator\Building\... $buildingName)
+    mixed ObjectiveDane\RadiatorCalculator\Building\Building::__construct(integer $desiredTemperature, string $mode, \ObjectiveDane\RadiatorCalculator\Building\... $buildingName)
 
 Building constructor.
 
@@ -79,13 +79,13 @@ Building constructor.
 #### Arguments
 * $desiredTemperature **integer** - &lt;p&gt;The desired room temperature&lt;/p&gt;
 * $mode **string** - &lt;p&gt;The output mode, Watts or BTU&lt;/p&gt;
-* $buildingName **ObjectiveDane\HeatLossCalculator\Building\...** - &lt;p&gt;Any number of objects from the Room\Room class (or subclasses)&lt;/p&gt;
+* $buildingName **ObjectiveDane\RadiatorCalculator\Building\...** - &lt;p&gt;Any number of objects from the Room\Room class (or subclasses)&lt;/p&gt;
 
 
 
 ### getPowerByRoom
 
-    array ObjectiveDane\HeatLossCalculator\Building\Building::getPowerByRoom()
+    array ObjectiveDane\RadiatorCalculator\Building\Building::getPowerByRoom()
 
 Return an array where elements are (string) roomName => (int) powerRequiredToHeatRoom
 
@@ -98,7 +98,7 @@ Return an array where elements are (string) roomName => (int) powerRequiredToHea
 
 ### getTotalPower
 
-    integer ObjectiveDane\HeatLossCalculator\Building\Building::getTotalPower()
+    integer ObjectiveDane\RadiatorCalculator\Building\Building::getTotalPower()
 
 Get the total power required to heat this house.
 
@@ -111,7 +111,7 @@ Get the total power required to heat this house.
 
 ### getRoom
 
-    \ObjectiveDane\HeatLossCalculator\Room\Room ObjectiveDane\HeatLossCalculator\Building\Building::getRoom(string $roomName)
+    \ObjectiveDane\RadiatorCalculator\Room\Room ObjectiveDane\RadiatorCalculator\Building\Building::getRoom(string $roomName)
 
 Getter for a Room object in the array.
 
@@ -127,7 +127,7 @@ Getter for a Room object in the array.
 
 ### setRoom
 
-    mixed ObjectiveDane\HeatLossCalculator\Building\Building::setRoom(\ObjectiveDane\HeatLossCalculator\Room\Room $room)
+    mixed ObjectiveDane\RadiatorCalculator\Building\Building::setRoom(\ObjectiveDane\RadiatorCalculator\Room\Room $room)
 
 Add a Room object to the array.
 
@@ -137,13 +137,13 @@ Add a Room object to the array.
 
 
 #### Arguments
-* $room **[ObjectiveDane\HeatLossCalculator\Room\Room](ObjectiveDane-HeatLossCalculator-Room-Room.md)**
+* $room **[ObjectiveDane\RadiatorCalculator\Room\Room](ObjectiveDane-RadiatorCalculator-Room-Room.md)**
 
 
 
 ### getDesiredTemperature
 
-    integer ObjectiveDane\HeatLossCalculator\Building\Building::getDesiredTemperature()
+    integer ObjectiveDane\RadiatorCalculator\Building\Building::getDesiredTemperature()
 
 Get the desired temperature.
 
@@ -156,7 +156,7 @@ Get the desired temperature.
 
 ### setDesiredTemperature
 
-    mixed ObjectiveDane\HeatLossCalculator\Building\Building::setDesiredTemperature(integer $desiredTemperature)
+    mixed ObjectiveDane\RadiatorCalculator\Building\Building::setDesiredTemperature(integer $desiredTemperature)
 
 Set the desired temperature.
 
@@ -172,7 +172,7 @@ Set the desired temperature.
 
 ### getMode
 
-    string ObjectiveDane\HeatLossCalculator\Building\Building::getMode()
+    string ObjectiveDane\RadiatorCalculator\Building\Building::getMode()
 
 Get the output mode.
 
@@ -185,7 +185,7 @@ Get the output mode.
 
 ### setMode
 
-    mixed ObjectiveDane\HeatLossCalculator\Building\Building::setMode(string $mode)
+    mixed ObjectiveDane\RadiatorCalculator\Building\Building::setMode(string $mode)
 
 Set the output mode.
 
