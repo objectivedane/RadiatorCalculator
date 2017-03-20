@@ -12,6 +12,7 @@ Surfaces must be added to a room, or rooms, which in turn must be added to a bui
 Example:
 
     RadiatorCalculator::createBuilding();
+    RadiatorCalculator::setDesiredTemperature(21);
     RadiatorCalculator::addRoom('Living Room');
 
     RadiatorCalculator::addSurfaceToRoom('Living Room',3, 3, 1.8, 5, 'Outer Wall (North)');
