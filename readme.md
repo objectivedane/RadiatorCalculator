@@ -2,8 +2,11 @@ ObjectiveDane\RadiatorCalculator\RadiatorCalculator
 ===============
 
 Use to calculate the size of radiator required for a central heating system.
+
 Formula: surface area (m2) * temperature difference (c) * uValue
+
 The formula calculates the power required to maintain a temperature, considering the temperature on the other side of the surface and its uValue.
+
 Surfaces must be added to a room, or rooms, which in turn must be added to a building.
 
 Example:
